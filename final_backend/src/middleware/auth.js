@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const db = require('../config/database');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'academa_super_secret_key_2024';
+
 const authenticate = async (req, res, next) => {
   try {
     const token = req.headers.authorization?.split(' ')[1];
@@ -12,7 +14,7 @@ const authenticate = async (req, res, next) => {
       });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET);
     
     // Get user from database
     const result = await db.query(
