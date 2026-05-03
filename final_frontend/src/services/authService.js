@@ -1,5 +1,5 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL 
-  ? `${process.env.REACT_APP_API_URL}/api` 
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://academa-mxe9.onrender.com/api'
   : 'http://localhost:5001/api';
 
 export const login = async (email, password) => {

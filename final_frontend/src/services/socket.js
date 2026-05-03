@@ -1,6 +1,8 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+const SOCKET_URL = process.env.NODE_ENV === 'production'
+  ? 'https://academa-mxe9.onrender.com'
+  : 'http://localhost:5001';
 let socket;
 
 export const initSocket = (token) => {
