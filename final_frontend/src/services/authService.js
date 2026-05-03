@@ -1,6 +1,6 @@
 const API_BASE_URL = process.env.NODE_ENV === 'production'
   ? 'https://academa-mxe9.onrender.com/api'
-  : 'http://localhost:5001/api';
+  : 'https://academa-mxe9.onrender.com/api';
 
 export const login = async (email, password) => {
   const response = await fetch(`${API_BASE_URL}/auth/login`, {

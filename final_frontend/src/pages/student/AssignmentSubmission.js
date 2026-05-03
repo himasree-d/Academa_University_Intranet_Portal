@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fi';
 import PDFModal from '../../components/common/PDFModal';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const AssignmentSubmission = () => {
   const { id } = useParams();
@@ -162,7 +162,7 @@ const AssignmentSubmission = () => {
                     if (mySubmission.file_url.toLowerCase().endsWith('.pdf')) {
                       setShowPDF(true);
                     } else {
-                      window.open(`http://localhost:5001${mySubmission.file_url}`, '_blank');
+                      window.open(`https://academa-mxe9.onrender.com${mySubmission.file_url}`, '_blank');
                     }
                   }}
                   onMouseEnter={e=>{e.currentTarget.style.borderColor=colors.primary; e.currentTarget.style.color=colors.primary;}}
@@ -250,7 +250,7 @@ const AssignmentSubmission = () => {
         <PDFModal 
           isOpen={showPDF} 
           onClose={() => setShowPDF(false)} 
-          fileUrl={`http://localhost:5001${mySubmission.file_url}`} 
+          fileUrl={`https://academa-mxe9.onrender.com${mySubmission.file_url}`} 
           fileName={mySubmission.file_name} 
         />
       )}

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FiMail, FiLock, FiShield, FiCheckCircle, FiAlertCircle, FiChevronLeft } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const ForgotPassword = () => {
   const [step, setStep] = useState(1); // 1: Email, 2: OTP & New Password

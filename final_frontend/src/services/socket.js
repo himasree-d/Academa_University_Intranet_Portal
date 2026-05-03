@@ -2,7 +2,7 @@ import { io } from 'socket.io-client';
 
 const SOCKET_URL = process.env.NODE_ENV === 'production'
   ? 'https://academa-mxe9.onrender.com'
-  : 'http://localhost:5001';
+  : 'https://academa-mxe9.onrender.com';
 let socket;
 
 export const initSocket = (token) => {

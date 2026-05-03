@@ -4,7 +4,7 @@ import { FiBookOpen, FiUsers, FiClipboard, FiCheckCircle, FiClock, FiChevronRigh
 import { motion } from 'framer-motion';
 import Skeleton from '../../components/common/Skeleton';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const FacultyDashboard = () => {
   const [data, setData]     = useState(null);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { FiCheckCircle, FiAlertCircle, FiFileText, FiDownload } from 'react-icons/fi';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const GradeAssignments = () => {
   const { courseId } = useParams();
@@ -89,7 +89,7 @@ const GradeAssignments = () => {
                         </div>
                         <div style={{display:'flex', alignItems:'center', gap:'10px'}}>
                           {s.file_url && (
-                            <a href={`http://localhost:5001${s.file_url}`} target="_blank" rel="noreferrer"
+                            <a href={`https://academa-mxe9.onrender.com${s.file_url}`} target="_blank" rel="noreferrer"
                               style={{display:'flex', alignItems:'center', gap:'4px', padding:'6px 14px', background:colors.card, border:`1px solid ${colors.border}`, borderRadius:'10px', fontSize:'13px', color:colors.primary, textDecoration:'none'}}>
                               <FiDownload size={13}/> Download
                             </a>

@@ -4,7 +4,7 @@ import { FiBookOpen, FiClipboard, FiCalendar, FiMessageSquare, FiClock, FiUser, 
 import { motion } from 'framer-motion';
 import Skeleton, { CardSkeleton } from '../../components/common/Skeleton';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const StudentDashboard = () => {
   const [data, setData]         = useState(null);

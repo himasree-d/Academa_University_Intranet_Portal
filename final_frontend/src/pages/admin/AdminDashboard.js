@@ -4,7 +4,7 @@ import { FiUsers, FiBookOpen, FiClipboard, FiUpload, FiUserPlus, FiBarChart2 } f
 import { motion } from 'framer-motion';
 import Skeleton from '../../components/common/Skeleton';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const AdminDashboard = () => {
   const [data, setData]     = useState(null);

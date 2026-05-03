@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FiUsers, FiChevronLeft, FiMail, FiBookOpen } from 'react-icons/fi';
 import Skeleton from '../../components/common/Skeleton';
 
-const API = 'http://localhost:5001/api';
+const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
 
 const CourseStudents = () => {
   const { courseId } = useParams();
