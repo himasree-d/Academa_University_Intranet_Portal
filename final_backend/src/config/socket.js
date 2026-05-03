@@ -7,10 +7,11 @@ const users = new Map(); // userId -> socketId
 const init = (server) => {
   io = socketIo(server, {
     cors: {
-      origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+      origin: true, // Allow all origins
       methods: ['GET', 'POST'],
       credentials: true
-    }
+    },
+    transports: ['polling', 'websocket'] // polling first for Render compatibility
   });
 
   io.use((socket, next) => {

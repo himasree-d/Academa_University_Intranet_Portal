@@ -10,7 +10,7 @@ export const initSocket = (token) => {
   
   socket = io(SOCKET_URL, {
     auth: { token },
-    transports: ['websocket'],
+    transports: ['polling', 'websocket'], // polling first for Render
     reconnection: true
   });
 
