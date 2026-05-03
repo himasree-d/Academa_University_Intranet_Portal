@@ -1,0 +1,76 @@
+:root {
+  /* Light Mode Colors - Sage Academic Theme */
+  --bg-primary: #fdfdfb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f4f2;
+  
+  --text-primary: #2f3e37;
+  --text-secondary: #5e7a6d;
+  --text-muted: #8a9f94;
+  
+  --accent-primary: #7ea191;
+  --accent-primary-rgb: 126, 161, 145;
+  --accent-hover: #6a8c7d;
+  --accent-light: #f1f4f2;
+  
+  --border-color: #e2e9e5;
+  --card-shadow: 0 10px 30px -10px rgba(126, 161, 145, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(226, 233, 229, 0.5);
+}
+
+[data-theme='dark'] {
+  /* Dark Mode Colors - Slate Forest */
+  --bg-primary: #1a1f1d;
+  --bg-secondary: #242b28;
+  --bg-tertiary: #2e3833;
+  
+  --text-primary: #eef2f0;
+  --text-secondary: #a8b8b0;
+  --text-muted: #75867e;
+  
+  --accent-primary: #94b5a6;
+  --accent-primary-rgb: 148, 181, 166;
+  --accent-hover: #aec7bc;
+  --accent-light: #242b28;
+  
+  --border-color: #38453f;
+  --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(36, 43, 40, 0.8);
+  --glass-border: rgba(56, 69, 63, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+.skeleton {
+  background: var(--bg-tertiary);
+  background-image: linear-gradient(to right, var(--bg-tertiary) 0%, var(--border-color) 20%, var(--bg-tertiary) 40%, var(--bg-tertiary) 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation: shimmer 1.5s infinite linear forwards;
+  border-radius: 4px;
+}

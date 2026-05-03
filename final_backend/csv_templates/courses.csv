@@ -1,0 +1,5 @@
+code,name,description,credits,department,semester,schedule,room,faculty_email
+CS201,Data Structures & Algorithms,Fundamental data structures and algorithms,4,CSE,Spring 2024,Mon/Wed/Fri 09:25 AM,ELT-2,rajesh@academa.edu
+CS301,Database Management Systems,Relational databases and SQL,3,CSE,Spring 2024,Tue/Thu 10:35 AM,ELT-6,priya.sharma@academa.edu
+CS401,Computer Networks,Network protocols and architecture,3,CSE,Spring 2024,Mon/Wed 01:35 PM,ELT-1,amit@academa.edu
+CS202,Operating Systems,Process and memory management,4,CSE,Spring 2024,Tue/Thu/Fri 03:50 PM,ECR-17,sneha.reddy@academa.edu

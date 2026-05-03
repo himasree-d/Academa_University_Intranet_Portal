@@ -1,0 +1,6 @@
+node_modules/
+.env
+build/
+.DS_Store
+data_migration.sql
+data_inserts.sql
