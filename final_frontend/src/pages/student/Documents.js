@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiFileText, FiDownload, FiSearch, FiFolder, FiBookOpen } from 'react-icons/fi';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const Documents = () => {
   const [materials, setMaterials] = useState([]);
@@ -87,7 +87,7 @@ const Documents = () => {
                 <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', paddingTop:'12px', borderTop:`1px solid ${colors.border}`}}>
                   <span style={{fontSize:'12px', color:colors.light}}>{m.instructor_name}</span>
                   {m.file_url && (
-                    <a href={`https://academa-mxe9.onrender.com${m.file_url}`} target="_blank" rel="noreferrer"
+                    <a href={`http://localhost:5001${m.file_url}`} target="_blank" rel="noreferrer"
                       style={{display:'flex', alignItems:'center', gap:'4px', padding:'5px 12px', background:colors.lightBg, border:`1px solid ${colors.border}`, borderRadius:'8px', fontSize:'12px', color:colors.primary, textDecoration:'none'}}
                       onClick={e=>e.stopPropagation()}>
                       <FiDownload size={12}/> Download

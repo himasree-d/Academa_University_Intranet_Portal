@@ -17,8 +17,7 @@ const submitAssignment = async (req, res) => {
     if (!enrolled.rows.length) return res.status(403).json({ success: false, message: 'Not enrolled in this course' });
 
     const isLate = new Date() > new Date(assignment.rows[0].due_date);
-    const { uploadFile } = require('../services/supabaseService');
-    const file_url = await uploadFile(req.file, 'academa-files', 'submissions');
+    const file_url = `/uploads/${req.file.filename}`;
 
     const result = await db.query(
       `INSERT INTO submissions (assignment_id,student_id,file_name,file_url,status)

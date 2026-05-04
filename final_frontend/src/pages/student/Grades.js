@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiBarChart2, FiAward, FiTrendingUp, FiBookOpen } from 'react-icons/fi';
 import Skeleton, { TableRowSkeleton } from '../../components/common/Skeleton';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const Grades = () => {
   const [grades, setGrades]   = useState([]);

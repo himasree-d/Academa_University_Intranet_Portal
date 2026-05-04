@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fi';
 import PDFModal from '../../components/common/PDFModal';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -126,9 +126,9 @@ const CourseDetail = () => {
                           <button 
                             onClick={() => {
                               if (m.file_url.toLowerCase().endsWith('.pdf')) {
-                                setViewingPDF({ url: `https://academa-mxe9.onrender.com${m.file_url}`, name: m.title });
+                                setViewingPDF({ url: `http://localhost:5001${m.file_url}`, name: m.title });
                               } else {
-                                window.open(`https://academa-mxe9.onrender.com${m.file_url}`, '_blank');
+                                window.open(`http://localhost:5001${m.file_url}`, '_blank');
                               }
                             }}
                             style={{display:'flex',alignItems:'center',gap:'4px',padding:'6px 12px',background:colors.card,border:`1px solid ${colors.border}`,borderRadius:'8px',fontSize:'12px',color:colors.primary, cursor:'pointer'}}>

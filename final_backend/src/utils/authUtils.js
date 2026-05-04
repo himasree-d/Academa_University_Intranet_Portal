@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET || 'academa_super_secret_key_2024';
 
 const generateToken = (user) => {
   return jwt.sign(
@@ -8,8 +7,8 @@ const generateToken = (user) => {
       email: user.email, 
       role: user.role 
     },
-    JWT_SECRET,
-    { expiresIn: '7d' }
+    process.env.JWT_SECRET,
+    { expiresIn: process.env.JWT_EXPIRE || '7d' }
   );
 };
 

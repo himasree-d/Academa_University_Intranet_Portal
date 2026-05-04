@@ -1,8 +1,6 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = process.env.NODE_ENV === 'production'
-  ? 'https://academa-mxe9.onrender.com'
-  : 'https://academa-mxe9.onrender.com';
+const SOCKET_URL = 'http://localhost:5001';
 let socket;
 
 export const initSocket = (token) => {
@@ -10,7 +8,7 @@ export const initSocket = (token) => {
   
   socket = io(SOCKET_URL, {
     auth: { token },
-    transports: ['polling', 'websocket'], // polling first for Render
+    transports: ['websocket'],
     reconnection: true
   });
 

@@ -100,8 +100,7 @@ const sendMessage = async (req, res) => {
     let fileUrl = null, fileName = null;
 
     if (req.file) {
-      const { uploadFile } = require('../services/supabaseService');
-      fileUrl = await uploadFile(req.file, 'academa-files', 'chat');
+      fileUrl = `/uploads/${req.file.filename}`;
       fileName = req.file.originalname;
     }
 

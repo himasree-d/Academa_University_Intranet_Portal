@@ -22,10 +22,9 @@ const uploadMaterial = async (req, res) => {
 
     let file_url=null, file_name=null, file_size=null, file_type=null;
     if (req.file) {
-      const { uploadFile } = require('../services/supabaseService');
-      file_url  = await uploadFile(req.file, 'academa-files', 'materials');
+      file_url  = `/uploads/${req.file.filename}`;
       file_name = req.file.originalname;
-      file_size = `${(req.file.size/(1024*1024)).toFixed(2)} MB`;
+      file_size = `${(req.file.size/(1024*1024)).toFixed(1)} MB`;
       file_type = path.extname(req.file.originalname).slice(1).toLowerCase();
     }
     const result = await db.query(

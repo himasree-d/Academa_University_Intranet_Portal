@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FiUser, FiMail, FiLock, FiEye, FiEyeOff, FiAward, FiAlertCircle, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
 import ThemeToggle from '../../components/common/ThemeToggle';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const DEPARTMENTS = ['CSE','AI','Mechatronics','Biotechnology','ECE','ECM','Civil','Mechanical','Computational Mathematics','Computational Biology'];
 

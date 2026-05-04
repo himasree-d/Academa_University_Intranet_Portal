@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiBell, FiPlus, FiTrash2, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const SystemAnnouncements = () => {
   const [announcements, setAnnouncements] = useState([]);

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiBookOpen, FiUser, FiCalendar, FiClock, FiSearch } from 'react-icons/fi';
 import Skeleton, { CardSkeleton } from '../../components/common/Skeleton';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const MyCourses = () => {
   const [courses, setCourses] = useState([]);

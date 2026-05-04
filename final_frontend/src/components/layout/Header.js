@@ -15,6 +15,8 @@ const Header = ({ userRole = 'student', userName = 'Arjun', toggleSidebar, isSid
 
   const handleLogout = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    localStorage.clear();
     navigate('/login');
   };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiBell, FiCalendar, FiUser, FiSearch, FiStar } from 'react-icons/fi';
 import Skeleton from '../../components/common/Skeleton';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const Announcements = () => {
   const [announcements, setAnnouncements] = useState([]);

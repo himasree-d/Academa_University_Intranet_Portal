@@ -4,7 +4,7 @@ import PDFModal from '../../components/common/PDFModal';
 import DeleteConfirmModal from '../../components/common/DeleteConfirmModal';
 import { initSocket, getSocket, disconnectSocket } from '../../services/socket';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const Chat = () => {
   const [people, setPeople]           = useState([]);
@@ -419,9 +419,9 @@ const Chat = () => {
                                 <div 
                                   onClick={() => {
                                     if (msg.file_url.toLowerCase().endsWith('.pdf')) {
-                                      setViewingPDF({ url: `https://academa-mxe9.onrender.com${msg.file_url}`, name: msg.file_name });
+                                      setViewingPDF({ url: `http://localhost:5001${msg.file_url}`, name: msg.file_name });
                                     } else {
-                                      window.open(`https://academa-mxe9.onrender.com${msg.file_url}`, '_blank');
+                                      window.open(`http://localhost:5001${msg.file_url}`, '_blank');
                                     }
                                   }}
                                   style={{display:'flex', alignItems:'center', gap:'8px', padding:'8px 12px', background:isMe?'rgba(255,255,255,0.15)':'rgba(0,0,0,0.05)', borderRadius:'10px', marginBottom:msg.message?'8px':0, color:isMe?'white':colors.primary, cursor: 'pointer', fontSize:'13px', border:isMe?'1px solid rgba(255,255,255,0.2)':`1px solid ${colors.border}`}}

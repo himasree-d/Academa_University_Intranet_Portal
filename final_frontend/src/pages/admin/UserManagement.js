@@ -3,7 +3,7 @@ import { FiUsers, FiSearch, FiUserPlus, FiEdit2, FiTrash2, FiCheckCircle, FiAler
 import { motion, AnimatePresence } from 'framer-motion';
 import Skeleton, { TableRowSkeleton } from '../../components/common/Skeleton';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const UserManagement = () => {
   const [users, setUsers]     = useState([]);

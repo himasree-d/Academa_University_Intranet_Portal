@@ -5,7 +5,7 @@ import {
   FiRefreshCw, FiDatabase
 } from 'react-icons/fi';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const DataImport = () => {
   const [stats, setStats] = useState(null);

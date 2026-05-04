@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiCalendar, FiClock, FiMapPin, FiUser, FiAlertCircle } from 'react-icons/fi';
 
-const API = process.env.NODE_ENV === 'production' ? 'https://academa-mxe9.onrender.com/api' : 'https://academa-mxe9.onrender.com/api';
+const API = 'http://localhost:5001/api';
 
 const DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const TIME_SLOTS = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00'];

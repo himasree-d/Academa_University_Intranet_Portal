@@ -1,13 +1,14 @@
 const { Pool } = require('pg');
 
-const SUPABASE_URL = 'postgresql://postgres.aiucznsyjaubfpjjlebd:ewgfehbvrhy4eye@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres';
-
 const pool = new Pool({
-  connectionString: SUPABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  },
-  connectionTimeoutMillis: 10000,
+  user: process.env.DB_USER || 'himasree',
+  host: process.env.DB_HOST || 'localhost',
+  database: process.env.DB_NAME || 'academa_lms',
+  password: process.env.DB_PASSWORD || '',
+  port: process.env.DB_PORT || 5432,
+  max: 20, // maximum number of clients in the pool
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
 });
 
 // Test connection

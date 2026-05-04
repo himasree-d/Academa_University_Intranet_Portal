@@ -1,6 +1,4 @@
-const API_BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://academa-mxe9.onrender.com/api'
-  : 'https://academa-mxe9.onrender.com/api';
+const API_BASE_URL = 'http://localhost:5001/api';
 
 const getHeaders = () => {
   const token = localStorage.getItem('token');
